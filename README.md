@@ -163,7 +163,7 @@
      <br />`-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
      <br />`-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
    
-   <img src="images/openlane_design_prep.png"> 
+   <img src="Images/openlane_design_prep.png"> 
    
    During the design preparation the technology LEF and cell LEF files are merged together to obtain a `merged.lef` file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route. 
     
