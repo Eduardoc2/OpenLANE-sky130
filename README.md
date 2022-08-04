@@ -172,7 +172,7 @@
    
     run_synthesis
    
-   <img src="images/d1_openlane_synthesis.JPG">
+   <img src="Images/synthesis_detail.png">
    
 # Day 2 - Good floorplan vs bad floorplan and introduction to library cells
  ## Chip Floorplanning
