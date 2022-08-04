@@ -86,7 +86,7 @@
   - Core: It is the actual area of the IC where the logic resides.
   - Pads: These are the interfaces between the internal signals of a chip and the external pins
  
-  <img src="images/d1_ic_terms.JPG">
+  <img src="images/D1_pdk_directory.png">
  
  ## Introduction To RISC-V
    RISC-V is a new ISA that's available under open, free and non-restrictive licences. RISC-V ISA delivers a new level of free, extensible software and hardware freedom on architecture.
