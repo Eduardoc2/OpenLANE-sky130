@@ -299,14 +299,16 @@
   
     <layer-name> <X-or-Y> <track-offset> <track-pitch>
     
-  <img src="images/d4_track_info.JPG">
+  <img src="Images/d4_tracks.png">
   
   To create a standard cell LEF from an existing layout, some important aspects need to be taken into consideration.
   1. The height of cell be appropriate, so that the `VPWR` and `VGND` properly fall on the power distribution network.
   2. The width of cell should be an odd multiple of the minimum permissible grid size.
   3. The input and ouptut of the cell fall on intersection of the vertical and horizontal grid line.
   
-  <img src="images/d4_valid_layout.JPG">  
+  <img src="Images/d4_mag.png">  
+  <img src="Images/d4_lef_write.png">
+  <img src="Images/d4_lef.png">
   
  ## Timing Analysis using OpenSTA
   The Static Timing Analysis(STA) of the design is carried out using the OpenSTA tool. The analysis can be done in to different ways.
@@ -323,12 +325,14 @@
    3. Total Negative Slack (= 0.00, if no negative slack)
    4. Worst Negative Slack (= 0.00, if no negative slack)
   
-  <table border="0">
-  <tr>
-    <td> <img src="images/d4_sta_1.JPG"> </td>
-    <td> <img src="images/d4_sta_2.JPG"> </td>
-  </tr>
-  </table>
+  <img src="Images/d4_config_tcl.png">
+  <img src="Images/d4_prep_inv.png">
+  <img src="Images/d4_prep_complete.png">
+  <img src="Images/d4_syn_complete.png">
+  <img src="Images/d4_changes.png">
+  <img src="Images/d4_floor_plac_complete.png">
+  <img src="Images/d4_chip_mag.png">
+  <img src="Images/d4_chip_mag2.png">
   
   If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
   1. Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
