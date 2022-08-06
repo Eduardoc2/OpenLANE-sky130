@@ -271,16 +271,9 @@
   
   The extracted SPICE model like the first snippet shown below. Some modification are done to the SPICE netlist for the purpose of simulations, which is shown in the second snippet below.
   
-  <table border="0">
-  <tr>
-    <td> <center>Commands for Extraction</center> <br /><img src="images/d3_spice_ext_1.JPG"> </td>
-    <td> <center>.ext file</center> <img src="images/d3_spice_ext_2.JPG"> </td>
-  </tr>
-  <tr>
-    <td> <center>Generated SPICE Netlist</center> <img src="images/d3_spice_1.JPG"> </td>
-    <td> <center>Modified SPICE Netlist</center> <img src="images/d3_spice_2.JPG"> </td>
-  </tr>
-  </table>
+  <img src="Images/d3_modi_spice.png">
+  <img src="Images/d3_ngspice.png">
+  <img src="Images/d3_plot.png">
   
  ## Transient Analysis using NGSPICE
   The SPICE netlist generated in previous step is simulated using the NGSPICE tool. NGSPICE is an open-source mixed-level/mixed-signal electronic spice circuit simulator.
