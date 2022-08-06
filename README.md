@@ -278,7 +278,8 @@
   The command used to invoke NGSPICE is shown below.
   
     ngspice <name-of-SPICE-netlist-file>
-    <img src="Images/d3_ngspice.png">
+    
+   <img src="Images/d3_ngspice.png">
     
   Following command is used to plot waveform in ngspice tool.
     
