@@ -221,9 +221,9 @@
    
    Placement is carried out as an iterative process till the value of overflow converges to 0.
    
-   <img src="images/d2_placement_invoke_magic_cmd.JPG">
-   <img src="images/d2_placement_magic.JPG">
-   <table border="0"><tr><td><img src="images/d2_placement_magic_expand.JPG"> </td><td> <img src="images/d2_placement_magic_expand_2.JPG"> </td></tr></table>
+   <img src="Images/d2_placement_finish.png">
+   <img src="Images/d2_plac_magic.png">
+   <table border="0"><tr><td><img src="Images/d2_plac_mag2.png"> </td><td> <img src="Images/d2_plac_mag3.png"> </td></tr></table>
    
  ## Cell Design and Characterization Flows
  ### Cell Design Flow
