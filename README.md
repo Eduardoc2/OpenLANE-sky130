@@ -253,16 +253,9 @@
   The inverter design is done using Magic Layout Tool. It takes the technology file as an input (`sky130A.tech` in this case). Magic tool provide a very easy to use interface to design various layers of the layout. It also has an in-built DRC check fetaure.
   The snippet below shows a layout for CMOS Inverter with and without design rule violations.
   
-  <table border="0">
-  <tr>
-    <td><img src="images/d3_magic_layout_with_error.JPG"> </td>
-    <td> <img src="images/d3_magic_with_error.JPG"> </td>
-  </tr>
-  <tr>
-    <td><img src="images/d3_magic_layout_without_error.JPG"> </td>
-    <td> <img src="images/d3_magic_without_error.JPG"> </td>
-  </tr>
-  </table>
+  <img src="Images/d3_inv_magic.png">
+  <img src="Images/d3_inv_drc.png">
+  <img src="Images/d3_inv_drc_nice.png">
   
  ## Extract SPICE Netlist from Standard Cell Layout
   To simulate and verify the functionality of the standard cell layout designed, there is a need of SPICE netlist of a given layout. To mention in brief, "Simulation Program with Integrated Circuit Emphasis (SPICE)" is an industry standard design language for electronic circuitry. SPICE model very closely models the actual circuit behavior.
