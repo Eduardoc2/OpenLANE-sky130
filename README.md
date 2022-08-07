@@ -352,8 +352,14 @@
   
     run_cts
     
-   <img src="images/d4_cts_1.JPG">
-   <img src="images/d4_cts_2.JPG">
+   <img src="Images/d4_mybase.png">
+   <img src="Images/d4_p1.png">
+   <img src="Images/d4_p2.png">
+   <img src="Images/d4_p3.png">
+   <img src="Images/d4_p4.png">
+   <img src="Images/d4_p5.png">
+   <img src="Images/d4_p6.png">
+   <img src="Images/d4_p7.png">
 
 # Day 5 - Final steps for RTL2GDS
  ## Generation of Power Distribution Network
