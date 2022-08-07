@@ -368,7 +368,9 @@
    
     gen_pdn
     
-   <img src="images/d5_pdn.JPG">
+   <img src="Images/d5_run_gen_pdn.png">
+   <img src="Images/d5_pnd.png">
+   <img src="Images/d5_1.png">
    
  ## Routing using TritonRoute
    OpenLANE uses TritonRoute, an open source router for modern industrial designs. The router consists of several main building blocks, including pin access analysis, track assignment, initial detailed routing, search and repair, and a DRC engine.
@@ -381,12 +383,13 @@
    
     run_routing
     
-   <table border="0">
-   <tr>
-    <td> <img src="images/d5_routing.JPG"> </td>
-    <td> <img src="images/d5_routing_2.JPG"> </td>
-   </tr>
-   </table>
+   <img src="Images/d5_run_routing.png">
+   <img src="Images/d5_routing_2.png">
+   <img src="Images/d5_routing_3.png">
+   
+   <img src="Images/d5_layout.png">
+   <img src="Images/d5_layout_2.png">
+   <img src="Images/d5_layout_3.png">
     
  ## SPEF File Generation
    Standard Parasitic Exchange Format (SPEF) is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. 
@@ -397,7 +400,7 @@
     
    The below snippet shows a small part of the `.spef` file.
    
-   <img src="images/d5_spef_file.JPG">
+   <img src="Images/d5_spef.png">
    
 # References
   - RISC-V: https://riscv.org/
