@@ -341,10 +341,6 @@
     
  ## SPEF File Generation
    Standard Parasitic Exchange Format (SPEF) is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. 
-   OpenLANE consists of a tool named, SPEF_EXTRACTOR for generation of SPEF file. It is a `python` based parser which takes the `LEF` and `DEF` files as input arguments and generates the SPEF file. The following command is used for invoking the SPEC_EXTRACTOR.
-   
-    cd <path-to-SPEF_EXTRACTOR-tool-directory>
-    python3 main.py <path-to-LEF-file> <path-to-DEF-file-created-after-routing>
     
    The below snippet shows a small part of the `.spef` file.
    
@@ -352,6 +348,10 @@
    
  ## Magic
  
-   <img src="Images/d5_layout.png">
-   <img src="Images/d5_layout_2.png">
-   <img src="Images/d5_layout_3.png">
+ After finishing the routing we generate the .mag and .gds files.
+   
+    run_magic
+ 
+ <table border="0"><tr><td><img src="Images/d5_picorv32a.png"> </td><td> <img src="Images/d5_gnd.png"> </td></tr></table>
+ <table border="0"><tr><td><img src="Images/d5_zoom2.png"> </td><td> <img src="Images/d5_zoom3.png"> </td></tr></table>
+ 
