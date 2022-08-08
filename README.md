@@ -227,7 +227,7 @@
     
   Following command is used to plot waveform in ngspice tool.
     
-    ngspice 1 -> plot Y vs time A
+    ngspice 1 -> plot Y vs time a
    
    Below figure shows the waveform of Inverter output vs input w.r.t. time. Many timing parameters like rise time delay, fall time delay, propagation delay are calculated using this waveform.
    
@@ -235,22 +235,27 @@
    <img src="Images/d3_ext_file.png">
   
 # Day 4 - Pre-layout timing analysis and importance of good clock tree
-  In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design.
-  
  ## Magic Layout to Standard Cell LEF
-  Before creating the LEF file we require some details about the layers in the designs. This details are available in a `tracks.info` as shown below. It gives information about the `offset` and `pitch` of a track in a given layer both in horizontal and vertical direction. The track information is given in below mentioned format.
-  
-    <layer-name> <X-or-Y> <track-offset> <track-pitch>
+  Before creating the LEF file we require some details about the layers in the designs. This details are available in a `tracks.info` as shown below. 
     
   <img src="Images/d4_tracks.png">
+  
+  It gives information about the `offset` and `pitch` of a track in a given layer both in horizontal and vertical direction. The track information is given in below mentioned format.
+  
+    <layer-name> <X-or-Y> <track-offset> <track-pitch>
   
   To create a standard cell LEF from an existing layout, some important aspects need to be taken into consideration.
   1. The height of cell be appropriate, so that the `VPWR` and `VGND` properly fall on the power distribution network.
   2. The width of cell should be an odd multiple of the minimum permissible grid size.
   3. The input and ouptut of the cell fall on intersection of the vertical and horizontal grid line.
   
+  
+  
   <img src="Images/d4_mag.png">  
   <img src="Images/d4_lef_write.png">
+  
+  Then we can see the .lef file
+  
   <img src="Images/d4_lef.png">
   
  ## Timing Analysis using OpenSTA
@@ -267,20 +272,23 @@
    2. Setup Time Slack
    3. Total Negative Slack (= 0.00, if no negative slack)
    4. Worst Negative Slack (= 0.00, if no negative slack)
+   
+   First we look at the file configuration
   
   <img src="Images/d4_config_tcl.png">
+  
+  Then we overwrite the existing directory
+  
   <img src="Images/d4_prep_inv.png">
   <img src="Images/d4_prep_complete.png">
   <img src="Images/d4_syn_complete.png">
+  
+  We need to make some adjustments
+  
   <img src="Images/d4_changes.png">
   <img src="Images/d4_floor_plac_complete.png">
   <img src="Images/d4_chip_mag.png">
   <img src="Images/d4_chip_mag2.png">
-  
-  If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
-  1. Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
-  2. Scaling the buffers (Causes increase in design area)
-  3. Restricting the maximum fan-out of an element. 
   
  ## Clock Tree Synthesis using TritonCTS
   Clock Tree Synthesis(CTS) is a process which makes sure that the clock gets distributed evenly to all sequential elements in a design. The goal of CTS is to minimize the clock latency and skew.
@@ -291,18 +299,19 @@
   
   In OpenLANE, clock tree synthesis is carried out using TritonCTS tool. CTS should always be done after the floorplanning and placement as the CTS is carried out on a `placement.def` file that is created during placement stage.
   
-  The command used for running CTS in OpenLANE is given below.
-  
-    run_cts
+  Checking the files
     
    <img src="Images/d4_mybase.png">
    <img src="Images/d4_p1.png">
    <img src="Images/d4_p2.png">
    <img src="Images/d4_p3.png">
-   <img src="Images/d4_p4.png">
+   
+   The command used for running CTS in OpenLANE is given below.
+  
+    run_cts
+   
    <img src="Images/d4_p5.png">
    <img src="Images/d4_p6.png">
-   <img src="Images/d4_p7.png">
 
 # Day 5 - Final steps for RTL2GDS
  ## Generation of Power Distribution Network
