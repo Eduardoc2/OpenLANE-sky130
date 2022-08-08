@@ -142,9 +142,6 @@
  ## Chip Floorplanning
    Chip Floorplanning is the arrangement of logical block, library cells, pins on silicon chip. It makes sure that every module has been assigned an appropriate area and aspect ratio, every pin of the module has connection with other modules or periphery of the chip and modules are arranged in a way such that it consumes lesser area on a chip.
    
- ### Utilization Factor and Aspect Ratio
-   Utilization Factor is ratio of the area of core used by standard cells to the total core area. The utilization factor is generally kept in the range of 0.5-0.7 i.e. 50% - 60%. Maintaining a proper utilization factor facilitates placement and routing optimization.
-   
  ### Power Planning
    Power planning is a step in which power grid network is created to distribute power to each part of the design equally. This step deals with the unwanted voltage drop and ground bounce. Steady state IR Drop is caused by the resistance of the metal wires comprising the power distribution network. By reducing the voltage difference between local power and ground, steady-state IR Drop reduces both the speed and noise immunity of the local cells and macros.
    
@@ -166,6 +163,8 @@
     2. Merged LEF file (`merged.lef`)
     3. DEF File
     
+        magic -T <file path/sky130A.tech> lef read <file path/merged.lef> def read <file path/picorv32a.floorplan.def>
+    
    <img src="Images/d2_floorplan_magic.png">
    <img src="Images/d2_floorplan_magic_zoom.png">
    <img src="Images/d2_floorplan_magic_zoom2.png">
@@ -174,7 +173,6 @@
  ### Placement and Optimization
    The next step after floorplanning is placement. Placement determines location of each of the components on the die. Placement does not just place the standard cells available in the synthesized netlist. It also optimizes the design, thereby removing any timing violations created due to the relative placement on die.
    
- ### Placement using OpenLANE
    Placement in OpenLANE is done using the following command. 
     
     run_placement
