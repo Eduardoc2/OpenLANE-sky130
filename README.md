@@ -333,6 +333,9 @@
     run_routing
     
    <img src="Images/d5_run_routing.png">
+   
+   Checking the files
+   
    <img src="Images/d5_routing_2.png">
    <img src="Images/d5_routing_3.png">
    
