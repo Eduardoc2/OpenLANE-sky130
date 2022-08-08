@@ -186,27 +186,6 @@
    <img src="Images/d2_placement_finish.png">
    <img src="Images/d2_plac_magic.png">
    <table border="0"><tr><td><img src="Images/d2_plac_mag2.png"> </td><td> <img src="Images/d2_plac_mag3.png"> </td></tr></table>
-   
- ## Cell Design and Characterization Flows
- ### Cell Design Flow
-  In a border view Cell Design flow is are the stages or steps involved in the entire design of a standard cell. The figure below shows the input, output and design steps involved in cell design
-  
-  <img src="images/d2_cell_design_flow.PNG">
- 
- ### Characterization Flow
-  There are few problems of Standard Cells in polygon level format (GDSII). Some of them are:
-  - Extraction of functionality is complicated and unnecessary as it is known
-  - Functional/Delay simulation takes way too long
-  - Power extraction for a whole chip takes too long
-  - Automatic detection of timing constraints (e.g. Setup time) is difficult
-
-  A solution to above problems is Cell Characterization. It is a simple model for delay, function, constraints and power on cell/gate level. The Characterization Flow consists of the following stages:
-  1. Netlist Extraction - Transistors, resistances and capacitances are extracted with special tools and saved as SPICE netlist (or similar)
-  2. Specification of parameters - Library-wide parameters have to be specified: e.g. max Transition time
-  3. Model selection and specification - The used models determine the required data
-  4. Measurement - The cells are simulated with a SPICE-like tool to obtain the required data
-  5. Model Generation - The obtained data is fed into the models
-  6. Verification - Different checks are performed to ensure the correctness of the characterization
  
 # Day 3 - Design library cell using Magic Layout and ngspice characterization
   Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
