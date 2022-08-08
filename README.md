@@ -54,27 +54,7 @@
   - Clock Tree Synthesis(CTS)
   - Routing
   - GDSII Streaming
- 
-  <img src="Images/openlane_flow.png">
-
-# List of All Open-Source Tools Used
-  | Name of Tool | Application / Usage |
-  | --- | --- |
-  | [Yosys](https://github.com/YosysHQ/yosys) | Synthesis of RTL Design |
-  | ABC | Mapping of Netlist |
-  | [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA) | Static Timing Analysis |
-  | [OpenROAD](https://github.com/The-OpenROAD-Project/OpenROAD) | Floorplanning, Placement, CTS, Optimization, Routing |
-  | [TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute) | Detailed Routing |
-  | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
-  | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
-  | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
-  
-  
-# Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
- 
-  <img src="Images/D1_pdk_directory.png">
-  
- ### What is OpenLANE
+  ### What is OpenLANE
    [OpenLANE](https://github.com/efabless/openlane) is an automated RTL to GDSII flow which includes various open-source components such as OpenROAD, Yosys, Magic, Fault, Netgen, SPEF-Extractor. It also facilitates to add custom design exploration and optimization scripts.
    The detailed diagram of the OpenLANE architecture is shown below:
    
@@ -98,7 +78,7 @@
       4. `OpenDP` - Perfroms detailed placement to legalize the globally placed components
   4. CTS
       1. `TritonCTS` - Synthesizes the clock distribution network (the clock tree)
-  5. Routing *
+5. Routing *
       1. `FastRoute` - Performs global routing to generate a guide file for the detailed router
       2. `TritonRoute` - Performs detailed routing
       3. `SPEF-Extractor` - Performs SPEF extraction
@@ -107,13 +87,31 @@
   7. Checks
       1. `Magic` - Performs DRC Checks & Antenna Checks
       2. `Netgen` - Performs LVS Checks
-      
+ 
+  <img src="Images/openlane_flow.png">
+
+# List of All Open-Source Tools Used
+  | Name of Tool | Application / Usage |
+  | --- | --- |
+  | [Yosys](https://github.com/YosysHQ/yosys) | Synthesis of RTL Design |
+  | ABC | Mapping of Netlist |
+  | [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA) | Static Timing Analysis |
+  | [OpenROAD](https://github.com/The-OpenROAD-Project/OpenROAD) | Floorplanning, Placement, CTS, Optimization, Routing |
+  | [TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute) | Detailed Routing |
+  | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
+  | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
+  | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
+  
+  
+# Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
+    
  ## Open-Source EDA Tools
  ### OpenLANE Initialization
    For invoking OpenLANE in Linux Ubuntu, we should first run the docker everytime we use OpenLANE. This is done by using the following script:
     
-    docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) openlane:rc6
+    docker 
    
+  <img src="Images/D1_pdk_directory.png">
    A custom shell script or commands can be generated to make the task simpler.
    
    - To invoke OpenLANE run the `./flow.tcl` script.
