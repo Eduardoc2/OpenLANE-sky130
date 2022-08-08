@@ -1,6 +1,5 @@
 # OpenSource Physical Design
-  This repository contains all the information studied and created during the [Advanced Physical Design Using OpenLANE / SKY130](https://www.vlsisystemdesign.com/advanced-physical-design-using-openlane-sky130/) workshop. It is primarily foucused on a complete RTL2GDS flow using the open-soucre flow named OpenLANE. [PICORV32A](https://github.com/cliffordwolf/picorv32) RISC-V core design is used for the purpose.
-
+  
 # Table of Contents
   - [Introduction To RTL to GDSII Flow](#introduction-to-rtl-to-gdsii-flow)
   - [About Google SkyWater PDK](#about-google-skywater-pdk)
@@ -57,9 +56,6 @@
   - GDSII Streaming
  
  All the steps are further discussed in details in the repository.
-  
-# About Google SkyWater PDK
-  Google and SkyWater Technology Foundry in collaboration have released a completely open-source Process Design Kit(PDK) in May, 2020. The current release target to a SKY130 (i.e. 130 nm) process node is available as [SkyWater Open Source PDK](https://github.com/google/skywater-pdk). The PDK provides Physical VLSI Designer with a wide range of flexibility in design choices. All the designs and simulations listed in this repository are carried out using the same SkyWater Open Source PDK.
 
 # List of All Open-Source Tools Used
   | Name of Tool | Application / Usage |
@@ -73,10 +69,6 @@
   | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
   | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
   
-# Setting Up Environment
-  The above list of tools shows that, many different tools are required for various tasks in Physical VLSI Design. Each tool in itself have number of system requirements and require various supporting tools to be installed. Installing each tool one-by-one seems in-efficient. This is made easy by some custom scripts that setup the required tools and environment for them in just a few easy steps. To install all the required tools, one can refer to the below mentioned repositories:
-  - [VSDFlow](https://github.com/kunalg123/vsdflow) - Installs Yosys, Magic, OpenTimer, OpenSTA and some other supporting tools
-  - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script) - Install all required OpenROAD and some supporting tools
   
 # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
  ## Basic IC Design Terminologies
