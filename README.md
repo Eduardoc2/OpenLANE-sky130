@@ -209,9 +209,12 @@
     
     ext2spice cthresh 0 rthresh 0
     ext2spice
-  
+   
+  <img src="Images/d3_extraction.png">   
+   
   The extracted SPICE model like the first snippet shown below. Some modification are done to the SPICE netlist for the purpose of simulations, which is shown in the second snippet below.
   
+  <img src="Images/d3_spice.png">
   <img src="Images/d3_modi_spice.png">
   
  ## Transient Analysis using NGSPICE
@@ -225,12 +228,11 @@
   Following command is used to plot waveform in ngspice tool.
     
     ngspice 1 -> plot Y vs time A
-    
-   <img src="Images/d3_plot.png">
    
    Below figure shows the waveform of Inverter output vs input w.r.t. time. Many timing parameters like rise time delay, fall time delay, propagation delay are calculated using this waveform.
    
-   <img src="images/d3_ngspice_3.JPG">
+   <img src="Images/d3_plot.png">
+   <img src="Images/d3_ext_file.png">
   
 # Day 4 - Pre-layout timing analysis and importance of good clock tree
   In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design.
