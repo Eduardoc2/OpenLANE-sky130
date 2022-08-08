@@ -112,17 +112,16 @@
     
     docker 
     
-   A custom shell script or commands can be generated to make the task simpler.
+   A custom shell script or commands will be generated.
    - To invoke OpenLANE run the `./flow.tcl` script.
     
     ./flow.tcl -interactive
    
- ### Design Preparation
-   The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command. Here 0.9 is the required version of OpenLANE.
+   The first step after invoking OpenLANE is to import the openlane package of required version. 
    
     package require openlane 0.9
     
-   The next step is to prepare our design for the OpenLANE flow. This is done using following command:
+   The next step is to prepare our design for the OpenLANE flow. This is done using following command
        
     prep -design picorv32a
    
@@ -136,6 +135,7 @@
     run_synthesis
    
    After running the synthesis we can see some statistics
+   
    <img src="Images/synthesis_detail.png">
    
 # Day 2 - Good floorplan vs bad floorplan and introduction to library cells
