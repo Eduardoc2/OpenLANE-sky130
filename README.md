@@ -276,6 +276,7 @@
    First we look at the file configuration
   
   <img src="Images/d4_config_tcl.png">
+  <img src="Images/d4_p3.png">
   
   Then we overwrite the existing directory
   
@@ -304,7 +305,7 @@
    <img src="Images/d4_mybase.png">
    <img src="Images/d4_p1.png">
    <img src="Images/d4_p2.png">
-   <img src="Images/d4_p3.png">
+ 
    
    The command used for running CTS in OpenLANE is given below.
   
