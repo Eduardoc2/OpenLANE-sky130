@@ -327,10 +327,6 @@
    
  ## Routing using TritonRoute
    OpenLANE uses TritonRoute, an open source router for modern industrial designs. The router consists of several main building blocks, including pin access analysis, track assignment, initial detailed routing, search and repair, and a DRC engine.
-   The routing process is implemented in two stages:
-   1. Global Routing - Routing guides are generated for interconnects
-   2. Detailed Routing - Tracks are generated interatively.
-   TritonRoute 14 ensures there are no DRC violations after routing.
    
    The following command is used for routing.
    
