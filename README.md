@@ -55,7 +55,7 @@
   - Routing
   - GDSII Streaming
  
-  <img src="Images/openlane_design_prep.png">
+  <img src="Images/openlane_flow.png">
 
 # List of All Open-Source Tools Used
   | Name of Tool | Application / Usage |
