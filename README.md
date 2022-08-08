@@ -58,7 +58,7 @@
    [OpenLANE](https://github.com/efabless/openlane) is an automated RTL to GDSII flow which includes various open-source components such as OpenROAD, Yosys, Magic, Fault, Netgen, SPEF-Extractor. It also facilitates to add custom design exploration and optimization scripts.
    The detailed diagram of the OpenLANE architecture is shown below:
    
-   <img src="images/openlane_flow.png">
+   <img src="Images/openlane_flow.png">
    
    OpenLANE flow consists of several stages. By default all flow steps are run in sequence. Each stage may consist of multiple sub-stages. OpenLANE can also be run interactively as shown here.
 
@@ -87,8 +87,6 @@
   7. Checks
       1. `Magic` - Performs DRC Checks & Antenna Checks
       2. `Netgen` - Performs LVS Checks
- 
-  <img src="Images/openlane_flow.png">
 
 # List of All Open-Source Tools Used
   | Name of Tool | Application / Usage |
@@ -100,25 +98,24 @@
   | [TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute) | Detailed Routing |
   | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
   | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
-  | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
   
   
 # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
     
  ## Open-Source EDA Tools
  ### OpenLANE Initialization
-   For invoking OpenLANE in Linux Ubuntu, we should first run the docker everytime we use OpenLANE. This is done by using the following script:
+   First we need to make sure we have the following files inside the openlane folder
+   
+   <img src="Images/D1_pdk_directory.png">
+
+   For invoking OpenLANE we should first run the docker everytime we use OpenLANE. This is done by using the following script:
     
     docker 
-   
-  <img src="Images/D1_pdk_directory.png">
+    
    A custom shell script or commands can be generated to make the task simpler.
-   
    - To invoke OpenLANE run the `./flow.tcl` script.
-   - OpenLANE supports two modes of operation: interactive and autonomous.
-   - To use interactive mode use `-interactive` flag with `./flow.tcl`
-   
-   <img src="images/d1_openlane_invoke.JPG"> 
+    
+    ./flow.tcl -interactive
    
  ### Design Preparation
    The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command. Here 0.9 is the required version of OpenLANE.
@@ -127,11 +124,7 @@
     
    The next step is to prepare our design for the OpenLANE flow. This is done using following command:
        
-    prep -design <design-name>
-   
-   Some additional flags that can be used while preparation are:
-     <br />`-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
-     <br />`-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
+    prep -design picorv32a
    
    <img src="Images/openlane_design_prep.png"> 
    
@@ -142,6 +135,7 @@
    
     run_synthesis
    
+   After running the synthesis we can see some statistics
    <img src="Images/synthesis_detail.png">
    
 # Day 2 - Good floorplan vs bad floorplan and introduction to library cells
