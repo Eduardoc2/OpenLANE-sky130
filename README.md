@@ -1,48 +1,6 @@
 # OpenSource Physical Design
+  This repository contains all the information studied and created during the Advanced Physical Design Using OpenLANE / SKY130 workshop. It is primarily foucused on a complete RTL2GDS flow using the open-soucre flow named OpenLANE.
   
-# Table of Contents
-  - [Introduction To RTL to GDSII Flow](#introduction-to-rtl-to-gdsii-flow)
-  - [About Google SkyWater PDK](#about-google-skywater-pdk)
-  - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
-  - [Setting Up Environment](#setting-up-environment)
-  - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1---inception-of-open-source-eda-openlane-and-sky130-pdk)
-    - [Basic IC Design Terminologies](#basic-ic-design-terminologies)
-    - [Introduction To RISC-V](#introduction-to-risc-v)
-    - [SoC Design and OpenLANE](#soc-design-and-openlane)
-      - [Open-Source PDK Directory Structure](#open-source-pdk-directory-structure)
-      - [What is OpenLANE](#what-is-openlane)
-    - [Open-Source EDA Tools](#open-source-eda-tools)
-      - [OpenLANE Initialization](#openlane-initialization)
-      - [Design Preparation](#design-preparation)
-      - [Design Synthesis and Results](#design-synthesis-and-results)
-  - [Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#day-2---good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
-    - [Chip Floorplanning](#chip-floorplanning)
-      - [Utilization Factor and Aspect Ratio](#utilization-factor-and-aspect-ratio)
-      - [Power Planning](#power-planning)
-      - [Pin Placement](#pin-placement)
-      - [Floorplan using OpenLANE](#floorplan-using-openlane)
-      - [Review Floorplan Layout in Magic](#review-floorplan-layout-in-magic)
-    - [Placement](#placement)
-      - [Placement and Optimization](#placement-and-optimization)
-      - [Placement using OpenLANE](#placement-using-openlane)
-    - [Cell Design and Characterization Flows](#cell-design-and-characterization-flows)
-      - [Cell Design Flow](#cell-design-flow)
-      - [Characterization Flow](#characterization-flow)
-  - [Day 3 - Design library cell using Magic Layout and ngspice characterization](#day-3---design-library-cell-using-magic-layout-and-ngspice-characterization)
-    - [CMOS Inverter Design using Magic](#cmos-inverter-design-using-magic)
-    - [Extract SPICE Netlist from Standard Cell Layout](#extract-spice-netlist-from-standard-cell-layout)
-    - [Transient Analysis using NGSPICE](#transient-analysis-using-ngspice)
-  - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4---pre-layout-timing-analysis-and-importance-of-good-clock-tree)
-    - [Magic Layout to Standard Cell LEF](#magic-layout-to-standard-cell-lef)
-    - [Timing Analysis using OpenSTA](#timing-analysis-using-opensta)
-    - [Clock Tree Synthesis using TritonCTS](#clock-tree-synthesis-using-tritoncts)
-  - [Day 5 - Final steps for RTL2GDS](#day-5---final-steps-for-rtl2gds)
-    - [Generation of Power Distribution Network](#generation-of-power-distribution-network)
-    - [Routing using TritonRoute](#routing-using-tritonroute)
-    - [SPEF File Generation](#spef-file-generation)
-  - [References](#references)
-  - [Acknowledgement](#acknowledgement)
- 
 # Introduction To RTL to GDSII Flow
   RTL to GDSII Flow refers to the all the steps involved in converting a logical Register Transfer Level(RTL) Design to a fabrication ready GDSII format. GDSII is a database file format which is an industry standard for data exchange of IC layout artwork.
   The RTL to GSDII flow consists of following steps:
@@ -87,18 +45,6 @@
   7. Checks
       1. `Magic` - Performs DRC Checks & Antenna Checks
       2. `Netgen` - Performs LVS Checks
-
-# List of All Open-Source Tools Used
-  | Name of Tool | Application / Usage |
-  | --- | --- |
-  | [Yosys](https://github.com/YosysHQ/yosys) | Synthesis of RTL Design |
-  | ABC | Mapping of Netlist |
-  | [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA) | Static Timing Analysis |
-  | [OpenROAD](https://github.com/The-OpenROAD-Project/OpenROAD) | Floorplanning, Placement, CTS, Optimization, Routing |
-  | [TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute) | Detailed Routing |
-  | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
-  | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
-  
   
 # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
     
@@ -141,12 +87,6 @@
 # Day 2 - Good floorplan vs bad floorplan and introduction to library cells
  ## Chip Floorplanning
    Chip Floorplanning is the arrangement of logical block, library cells, pins on silicon chip. It makes sure that every module has been assigned an appropriate area and aspect ratio, every pin of the module has connection with other modules or periphery of the chip and modules are arranged in a way such that it consumes lesser area on a chip.
-   
- ### Power Planning
-   Power planning is a step in which power grid network is created to distribute power to each part of the design equally. This step deals with the unwanted voltage drop and ground bounce. Steady state IR Drop is caused by the resistance of the metal wires comprising the power distribution network. By reducing the voltage difference between local power and ground, steady-state IR Drop reduces both the speed and noise immunity of the local cells and macros.
-   
- ### Pin Placement
-   Pin placement is a important part of floorplanning as the timing delays and number of buffers required is dependent on the position of the pin. There are multiple pin placement option available such as equidistant placement, high-density placement.
  
  ### Floorplan using OpenLANE
    Floorplanning in OpenLANE is done using the following command. 
@@ -177,9 +117,7 @@
     
     run_placement
    
-   The DEF file created during floorplan is used as an input to placement. Placement in OpenLANE occurs in two stages:
-   - Global Placement
-   - Detailed Placement
+   The DEF file created during floorplan is used as an input to placement. Placement in OpenLANE occurs in two stages:t
    
    Placement is carried out as an iterative process till the value of overflow converges to 0.
    
@@ -191,7 +129,7 @@
   Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
   
  ## CMOS Inverter Design using Magic
-  The inverter design is done using Magic Layout Tool. It takes the technology file as an input (`sky130A.tech` in this case). Magic tool provide a very easy to use interface to design various layers of the layout. It also has an in-built DRC check fetaure.
+  The inverter design is done using Magic Layout Tool. It takes the technology file as an input (`sky130A.tech` in this case). 
   The snippet below shows a layout for CMOS Inverter with and without design rule violations.
   
   <img src="Images/d3_inv_magic.png">
@@ -199,7 +137,7 @@
   <img src="Images/d3_inv_drc_nice.png">
   
  ## Extract SPICE Netlist from Standard Cell Layout
-  To simulate and verify the functionality of the standard cell layout designed, there is a need of SPICE netlist of a given layout. To mention in brief, "Simulation Program with Integrated Circuit Emphasis (SPICE)" is an industry standard design language for electronic circuitry. SPICE model very closely models the actual circuit behavior.
+  To simulate and verify the functionality of the standard cell layout designed, there is a need of SPICE netlist of a given layout.
   Extraction of SPICE model for a given layout is done in two stages.
   1. Extract the circuit from the layout design.
   
@@ -249,7 +187,7 @@
   2. The width of cell should be an odd multiple of the minimum permissible grid size.
   3. The input and ouptut of the cell fall on intersection of the vertical and horizontal grid line.
   
-  
+  Standard cell in Magic
   
   <img src="Images/d4_mag.png">  
   <img src="Images/d4_lef_write.png">
@@ -259,9 +197,7 @@
   <img src="Images/d4_lef.png">
   
  ## Timing Analysis using OpenSTA
-  The Static Timing Analysis(STA) of the design is carried out using the OpenSTA tool. The analysis can be done in to different ways.
-  - Inside OpenLANE flow: This is by invoking `openroad` command inside the OpenLANE flow. In the openroad OpenSTA is invoked.
-  - Outside OpenLANE flow: This is done by directly invoking OpenSTA in the command line. This requires extra configuration to be done to specific the verilog file, constraints, clcok period and other required parameters.
+  The Static Timing Analysis(STA) of the design is carried out using the OpenSTA tool.
    
   OpenSTA is invoked using the below mentioned command.
   
@@ -293,10 +229,6 @@
   
  ## Clock Tree Synthesis using TritonCTS
   Clock Tree Synthesis(CTS) is a process which makes sure that the clock gets distributed evenly to all sequential elements in a design. The goal of CTS is to minimize the clock latency and skew.
-  There are several CTS techniques like:
-  1. H - Tree
-  2. X - Tree
-  3. Fish bone
   
   In OpenLANE, clock tree synthesis is carried out using TritonCTS tool. CTS should always be done after the floorplanning and placement as the CTS is carried out on a `placement.def` file that is created during placement stage.
   
