@@ -338,10 +338,6 @@
    
    <img src="Images/d5_routing_2.png">
    <img src="Images/d5_routing_3.png">
-   
-   <img src="Images/d5_layout.png">
-   <img src="Images/d5_layout_2.png">
-   <img src="Images/d5_layout_3.png">
     
  ## SPEF File Generation
    Standard Parasitic Exchange Format (SPEF) is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. 
@@ -354,13 +350,8 @@
    
    <img src="Images/d5_spef.png">
    
-# References
-  - RISC-V: https://riscv.org/
-  - VLSI System Design: https://www.vlsisystemdesign.com/
-  - OpenLANE: https://github.com/The-OpenROAD-Project/OpenLane
-
-# Acknowledgement
-  - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
-  - [Nickson Jose](https://github.com/nickson-jose)
-  - [Praharsha Mahurkar](https://github.com/praharshapm)
-  - Akurathi Radhika
+ ## Magic
+ 
+   <img src="Images/d5_layout.png">
+   <img src="Images/d5_layout_2.png">
+   <img src="Images/d5_layout_3.png">
